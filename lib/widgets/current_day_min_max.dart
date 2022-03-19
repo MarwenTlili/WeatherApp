@@ -7,13 +7,11 @@ class CurrentDayMinMax extends StatefulWidget{
   const CurrentDayMinMax({
     Key? key, 
     required this.data, 
-    required this.units, 
     required this.selectedUnit,
     required this.isLoading
   }) : super(key: key);
 
   final Map<String, dynamic> data ;
-  final List<Map<String, dynamic>> units ;
   final String selectedUnit;
   final bool isLoading;
 
@@ -52,13 +50,13 @@ class CurrentDayMinMaxState extends State<CurrentDayMinMax>{
           const SizedBox(width: 20),
           Text(
             widget.data["daily"][0]["temp"]["min"].round().toString()
-            +widget.units.firstWhere(
+            +units.firstWhere(
               (element) => element["key"] == widget.selectedUnit
             )["symbole"]+".."
           ),
           Text(
             widget.data["daily"][0]["temp"]["max"].round().toString()
-            +widget.units.firstWhere(
+            +units.firstWhere(
               (element) => element["key"] == widget.selectedUnit
             )["symbole"]
           )

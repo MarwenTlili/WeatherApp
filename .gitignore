@@ -119,4 +119,4 @@ app.*.symbols
 !/dev/ci/**/Gemfile.lock
 
 # personal templates
-lib/widgett/templates
+lib/widgets/templates

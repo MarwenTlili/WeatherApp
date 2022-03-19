@@ -7,14 +7,10 @@ class CurrentWeatherDetails extends StatefulWidget{
     Key? key,
     required this.isLoading,
     required this.data,
-    required this.units,
-    required this.unit
   }) : super(key: key);
 
   final bool isLoading;
   final Map<String, dynamic> data;
-  final List<Map<String, dynamic>> units;
-  final String unit;
 
   @override
   State<StatefulWidget> createState() => CurrentWeatherDetailsState();
@@ -30,14 +26,11 @@ class CurrentWeatherDetailsState extends State<CurrentWeatherDetails>{
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.only(left: leftPadding),
-            child: Text(
-              "Weather Details", 
-              style: TextStyle(
-                fontWeight: FontWeight.bold
-              )
-            ),
+          const Text(
+            "Weather Details", 
+            style: TextStyle(
+              fontWeight: FontWeight.bold
+            )
           ),
 
           _shimmerDetails(context),

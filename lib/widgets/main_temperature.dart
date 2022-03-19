@@ -6,13 +6,11 @@ class MainTemperature extends StatefulWidget{
   const MainTemperature({
     Key? key, 
     required this.data, 
-    required this.units, 
     required this.selectedUnit,
     required this.isLoading
   }) : super(key: key);
 
   final Map<String, dynamic> data ;
-  final List<Map<String, dynamic>> units ;
   final String selectedUnit;
   final bool isLoading;
 
@@ -78,7 +76,7 @@ class MainTemperatureState extends State<MainTemperature>{
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                widget.units.firstWhere(
+                units.firstWhere(
                   (element) => element["key"] == widget.selectedUnit
                 )["symbole"], 
                 style: const TextStyle(fontSize: 18)

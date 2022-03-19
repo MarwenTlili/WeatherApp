@@ -7,13 +7,11 @@ class Hourly extends StatefulWidget{
     Key? key, 
     required this.isLoading,
     required this.data, 
-    required this.units, 
     required this.selectedUnit,
     
   }) : super(key: key);
 
   final Map<String, dynamic> data ;
-  final List<Map<String, dynamic>> units ;
   final String selectedUnit;
   final bool isLoading;
 
@@ -85,7 +83,7 @@ class HourlyState extends State<Hourly>{
           ),
           Text(
             widget.data['hourly'][index]['temp'].round().toString()
-            +widget.units.firstWhere(
+            +units.firstWhere(
               (element) => element["key"] == widget.selectedUnit
             )["symbole"]
           ),
