@@ -229,14 +229,17 @@ class _HomePageState extends State<HomePage> {
           });
         }).onError((error, stackTrace){
           developer.log(error.toString());
+          isLoading = false;
         });
 
       }).onError((error, stackTrace){
         developer.log(error.toString());
+        isLoading = false;
       });
 
     }).onError((error, stackTrace){
       developer.log(error.toString());
+      isLoading = false;
     });
   }
 
