@@ -120,3 +120,6 @@ app.*.symbols
 
 # personal templates
 lib/widgets/templates
+
+# environment variables file
+**/.env
